@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #08080c;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Brilhos e Luzes de Fundo (Azul, Laranja e Roxo) */
+.bg-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.45;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.glow-blue {
+    width: 350px;
+    height: 350px;
+    background: #0088ff;
+    top: 5%;
+    left: 10%;
+}
+
+.glow-orange {
+    width: 380px;
+    height: 380px;
+    background: #ff6600;
+    bottom: 5%;
+    right: 10%;
+}
+
+.glow-purple {
+    width: 300px;
+    height: 300px;
+    background: #8a2be2;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Bolas em 3D Estilizadas e Animadas */
+.floating-balls-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+
+/* Futebol 3D */
+.soccer-ball {
+    width: 90px;
+    height: 90px;
+    top: 12%;
+    right: 15%;
+    background: radial-gradient(circle at 30% 30%, #ffffff 0%, #a0a0a0 60%, #111111 100%);
+    box-shadow: inset -10px -10px 20px rgba(0,0,0,0.8), 0 15px 25px rgba(0,0,0,0.5);
+}
+
+/* Basquete 3D */
+.basketball-ball {
+    width: 110px;
+    height: 110px;
+    bottom: 12%;
+    left: 12%;
+    background: radial-gradient(circle at 35% 35%, #ff8833 0%, #d44d00 70%, #551d00 100%);
+    box-shadow: inset -12px -12px 22px rgba(0,0,0,0.8), 0 20px 30px rgba(255, 102, 0, 0.3);
+    animation-delay: -2s;
+}
+
+/* Vôlei 3D */
+.volleyball-ball {
+    width: 80px;
+    height: 80px;
+    bottom: 25%;
+    right: 18%;
+    background: radial-gradient(circle at 30% 30%, #fff7b3 0%, #0055ff 60%, #001155 100%);
+    box-shadow: inset -8px -8px 18px rgba(0,0,0,0.7), 0 12px 20px rgba(0, 136, 255, 0.3);
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-25px) rotate(15deg); }
+}
+
+/* Estilo do Modal (Glassmorphism Moderno) */
+.modal-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 650px;
+    background: rgba(18, 18, 26, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7),
+                0 0 30px rgba(138, 43, 226, 0.15);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.brand-icon {
+    font-size: 2rem;
+    color: #ff6600;
+}
+
+.brand h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.brand h2 span {
+    background: linear-gradient(45deg, #0088ff, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-header p {
+    color: #a0a0b0;
+    font-size: 0.95rem;
+}
+
+/* Inputs e Botões */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #0088ff;
+    box-shadow: 0 0 12px rgba(0, 136, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+button#btnPerguntar {
+    background: linear-gradient(135deg, #ff6600, #8a2be2);
+    border: none;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button#btnPerguntar:hover {
+    transform: translateY(-2deg);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+}
+
+/* Tags de Atalho */
+.quick-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    color: #c0c0d0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tag:hover {
+    background: rgba(138, 43, 226, 0.3);
+    border-color: #8a2be2;
+    color: #fff;
+}
+
+/* Área da Resposta */
+.answer-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.answer-section.hidden {
+    display: none;
+}
+
+.answer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.answer-header h3 {
+    font-size: 1.1rem;
+    color: #0088ff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-voice {
+    background: rgba(0, 136, 255, 0.15);
+    border: 1px solid rgba(0, 136, 255, 0.4);
+    color: #0088ff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.btn-voice:hover {
+    background: #0088ff;
+    color: #fff;
+}
+
+.answer-text {
+    color: #e0e0f0;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Caixa de Notícia */
+.news-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 102, 0, 0.1);
+    border: 1px solid rgba(255, 102, 0, 0.3);
+    padding: 12px 16px;
+    border-radius: 12px;
+}
+
+.news-box i {
+    font-size: 1.4rem;
+    color: #ff6600;
+}
+
+.news-title {
+    display: block;
+    font-size: 0.8rem;
+    color: #a0a0a0;
+}
+
+.news-box a {
+    color: #ff8833;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.news-box a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

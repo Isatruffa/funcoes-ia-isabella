@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports IA - Perguntas & Respostas</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Elementos 3D e luzes de fundo -->
+    <div class="bg-glow glow-blue"></div>
+    <div class="bg-glow glow-orange"></div>
+    <div class="bg-glow glow-purple"></div>
+
+    <!-- Objetos Esportivos Flutuantes (Efeito 3D) -->
+    <div class="floating-balls-container">
+        <div class="ball soccer-ball" title="Futebol"></div>
+        <div class="ball basketball-ball" title="Basquete"></div>
+        <div class="ball volleyball-ball" title="Vôlei"></div>
+    </div>
+
+    <!-- Modal Principal -->
+    <main class="modal-card">
+        <header class="modal-header">
+            <div class="brand">
+                <i class="fa-solid fa-trophy brand-icon"></i>
+                <h2>Sports<span>IA</span></h2>
+            </div>
+            <p>Faça qualquer pergunta sobre esportes ou escolha uma sugestão!</p>
+        </header>
+
+        <!-- Seção de Busca -->
+        <section class="search-section">
+            <div class="input-group">
+                <input type="text" id="perguntaInput" placeholder="Ex: Quem ganhou a última Copa do Mundo?">
+                <button id="btnPerguntar">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Perguntar
+                </button>
+            </div>
+
+            <!-- Sugestões Rápidas -->
+            <div class="quick-tags">
+                <span class="tag" data-question="Quem é o maior campeão da NBA?">🏀 Maior campeão NBA</span>
+                <span class="tag" data-question="Qual país tem mais Copas do Mundo de Futebol?">⚽ Títulos da Copa</span>
+                <span class="tag" data-question="Quantas medalhas olímpicas o Brasil tem no vôlei?">🏐 Vôlei Olímpico</span>
+            </div>
+        </section>
+
+        <!-- Resposta & Notícia -->
+        <section id="respostaContainer" class="answer-section hidden">
+            <div class="answer-header">
+                <h3><i class="fa-solid fa-robot"></i> Resposta Inteligente</h3>
+                <button id="btnVoz" class="btn-voice" title="Ouvir resposta por Voz">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <span>Ouvir Voz</span>
+                </button>
+            </div>
+
+            <p id="textoResposta" class="answer-text"></p>
+
+            <div class="news-box">
+                <i class="fa-solid fa-newspaper"></i>
+                <div>
+                    <span class="news-title">Notícia / Fonte Relacionada:</span>
+                    <a id="linkNoticia" href="#" target="_blank" rel="noopener noreferrer">Ver notícia completa no Google Notícias <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
